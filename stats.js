@@ -3,7 +3,7 @@
 // Require / exports: no NODE, usamos essa estratégia para usar módulos, objetos que não estão definidos dentro de nossos scripts. Dessa forma temos acesso aos métodos, funções, propriedades, etc.
 // Importando os métodos do objeto OS, que já está definido no NODE::
 const os = require('os');
-
+const log = require('./logger');
 // Desestruturação: dentro do objeto 'os' temos diversos métodos e propriedades, para não precisarmos criar diversas variáveis para usar os seus métodos, dessa forma:
 // const freemen = os.freemen()
 // const total = os.totalmen()
@@ -25,6 +25,7 @@ setInterval(() => {
   console.clear();
   console.log('=====MEMORY STATUS=====')
   console.table(stats);
+  log(`${JSON.stringify(stats)} \n`);
 }, 1000);
 
 
